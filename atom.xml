@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TravisTom</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://tangqingzhen.com/"/>
+  <updated>2016-02-24T14:41:55.000Z</updated>
+  <id>http://tangqingzhen.com/</id>
+  
+  <author>
+    <name>travistom</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于博客网站的搭建</title>
+    <link href="http://tangqingzhen.com/2016/02/16/hello-world/"/>
+    <id>http://tangqingzhen.com/2016/02/16/hello-world/</id>
+    <published>2016-02-16T11:41:56.000Z</published>
+    <updated>2016-02-24T14:41:55.000Z</updated>
+    
+    <content type="html">&lt;p&gt;其实早在去年，也就是15年2月份的时候就已经开始折腾博客了，从刚一开始用github上推荐的jekyll折腾到现在用的hexo，真的是踩了不少坑。只是当时开学后忙于准备考研，搭建好的博客也被弃之脑后。如今考研结束，尽管努力了一年，也并没有得到一个好的结果。后悔是有，但更多应该是对时间的惋惜，如果这一年的时间都用来提升自己的实践技术，可能现在找工作也不会心里打鼓了吧。可是没有人能预知未来，所以也就无所谓后悔，无所谓惋惜，经历亦是一种收获。&lt;br&gt;由于隔了整整一年的时间，各种配置都忘的差不多了，以前申请的域名travistom.me将近到期可续费让我这个穷学生感到略贵，原先克隆的主题太卡，hexo又从2.x升到3.x……当然了，最主要的还是归于自己本身爱折腾的本质。遂把原先的仓库删掉，另申请了域名，重新来了一遍。网上的关于这方面的教程足够多，也足够细致。所以我打算写下流程并配以相关步骤的链接，以及自己记录下来的踩得那些坑（没记录下来的坑更多），以供其他爱好者参考吧。&lt;/p&gt;
+&lt;h2 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h2&gt;&lt;h3 id=&quot;hexo-githubpage搭建个人网站博客的流程&quot;&gt;&lt;a href=&quot;#hexo-githubpage搭建个人网站博客的流程&quot; class=&quot;headerlink&quot; title=&quot;hexo+githubpage搭建个人网站博客的流程&quot;&gt;&lt;/a&gt;hexo+githubpage搭建个人网站博客的流程&lt;/h3&gt;&lt;h3 id=&quot;记录在案的错误汇总&quot;&gt;&lt;a href=&quot;#记录在案的错误汇总&quot; class=&quot;headerlink&quot; title=&quot;记录在案的错误汇总&quot;&gt;&lt;/a&gt;记录在案的错误汇总&lt;/h3&gt;&lt;p&gt;1.如果你把CNAME，readme等文件放到总的根目录下，那么部署好之后发现文件被删除了。&lt;br&gt;解决的方法就是需要把这些文件放到根目录的souce文件夹下，再部署时就不会被删除了。&lt;br&gt;2.在更新hexo时或者刚开始用npm安装时出现卡住或出错而导致无法正常安装。&lt;br&gt;解决办法就是修改npm的安装源，以下三种方法任选一个&lt;br&gt;a.通过config命令:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm config &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; registry http://registry.cnpmjs.org&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm info underscore&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;b.命令指令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm --registry http://registry.cnpmjs.org info underscore&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;c.编辑 ~/.npmrc 加入下面内容&lt;br&gt;   registry = &lt;a href=&quot;http://registry.cnpmjs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://registry.cnpmjs.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.报错信息ERROR Deployer not found: github&lt;br&gt;解决方法运行命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后将deploy的type由github改为git（即改动根目录下的_config.yml文件内最后部分的部署类型）。&lt;/p&gt;
+&lt;p&gt;4.在正常部署成功的几天后，再次部署时出现报错（其实也不算报错）Failed connect to github.com:443; No error&lt;br&gt;猜测是国外的服务器不稳定，如果不太着急的话可以先不管它，第二天或者去吃个饭回来就好了。&lt;br&gt;当然也从网上找到了其他的解决方案，你可以试一下&lt;br&gt;通过执行telnet github.com 443，发现网络不通，于是想到设置代理，通过baidu找到设置proxy方法：&lt;br&gt;a.打开文件.gitconfig，文件位于用户主目录下，执行ls ~即可看到它。假设Win7登录用户名为tom，则位于C:\Users\tom目录下&lt;br&gt;b.编辑.gitconfig，在文件尾加入以下内容：&lt;br&gt;[http]&lt;br&gt;    proxy = &lt;a href=&quot;http://www.proxy.com:8080/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.proxy.com:8080/&lt;/a&gt;&lt;br&gt;[http]顶格写，proxy前保留一个tab，其中www.proxy.com为代理服务器的IP或域名。完成后，再次执行git clone &lt;a href=&quot;https://github.com/eyjian/mooon.git,发现成功了。。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/eyjian/mooon.git,发现成功了。。&lt;/a&gt;&lt;br&gt;对文件.gitconfig的操作，实际可以借助git命令来完成，而不必直接编辑.gitconfig，对应的子命令是git config –global，如：git config –global user.name “eyjian”，则在.gitconfig文件中可以看到如下内容：&lt;br&gt;[user]&lt;br&gt;    name = eyjian&lt;br&gt;同理，配置proxy命令为：git config –global http.proxy &lt;a href=&quot;http://www.proxy.com:8080/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.proxy.com:8080/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实早在去年，也就是15年2月份的时候就已经开始折腾博客了，从刚一开始用github上推荐的jekyll折腾到现在用的hexo，真的是踩了不少坑。只是当时开学后忙于准备考研，搭建好的博客也被弃之脑后。如今考研结束，尽管努力了一年，也并没有得到一个好的结果。后悔是有，但更多应
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
